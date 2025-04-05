@@ -16,7 +16,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     @Autowired
-    private final OkHttpClient okHttpClient;
+    private OkHttpClient okHttpClient;
     private final String baseUrl = "https://c35013e82272434488987d00b49bfbf7.weavy.io/api/users";
     private final String apiToken = "wys_pWLw7EZDEOQJOMKPRw6BicbjO0FclH4J7TCq";
     private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");

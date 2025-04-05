@@ -44,37 +44,36 @@ public class UserController {
         }
     }
 
-
-    // update  user
-
+    // update user
     @PatchMapping("/{id}")
-    public ResponseEntity<String> updateUser(@PathVariable ("id") String id , @RequestBody String jsonPayload){
+    public ResponseEntity<String> updateUser(@PathVariable("id") String id, @RequestBody String jsonPayload) {
         try {
             String response = userService.updateUser(id, jsonPayload);
-            return ResponseEntity.noContent().build();
-        }catch (IOException e){
+            return ResponseEntity.ok(response);
+        } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error updating user:" + e.getMessage());
+                    .body("Error updating user: " + e.getMessage());
         }
     }
 
-    //delete users
+    // delete user
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable("id") String id){
+    public ResponseEntity<String> deleteUser(@PathVariable("id") String id) {
         try {
             String response = userService.deleteUser(id);
-            return ResponseEntity.noContent().build();
-        }catch (IOException e){
+            return ResponseEntity.ok(response);
+        } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error deleting user:" + e.getMessage());
+                    .body("Error deleting user: " + e.getMessage());
         }
     }
+
 
     // get all
     @GetMapping
-    public ResponseEntity<String> getAllUsers(@RequestParam("take") int take){
+    public ResponseEntity<String> getAllUsers(@RequestParam("get") int get){
         try {
-            String response = userService.listUsers(take);
+            String response = userService.listUsers(get);
             return ResponseEntity.ok(response);
         }catch (IOException e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

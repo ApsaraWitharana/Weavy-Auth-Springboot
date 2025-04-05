@@ -39,6 +39,10 @@ This application was developed as part of the **Sentura Technology Internship Pr
 ```bash
 https://github.com/ApsaraWitharana/Weavy-Auth-Springboot.git
 ```
+2. API Testing -Postman
+```
+https://documenter.getpostman.com/view/35385905/2sB2cUB33M
+```
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
